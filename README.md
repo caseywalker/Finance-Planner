@@ -1,10 +1,14 @@
 # Capstone Planning
 
-## ERD and Wireframes
+## Planing Documents
 
 [ERD](https://dbdiagram.io/d/60b25254b29a09603d1718fb)
 
 [Figma](https://www.figma.com/file/uhrouKRO2WY8E0MheAPESq/Finance-Planner?node-id=0%3A1)
+
+[Project-Board](https://github.com/caseywalker/Finance-Planner/projects/1?add_cards_query=is%3Aopen)
+
+[Milestones](https://github.com/caseywalker/Finance-Planner/milestones)
 
 ## Features
 
@@ -57,4 +61,3 @@
 * Each step can only be completed one at a time. Step one must be completed to move onto step two, and so on
 * Once the user has completed each step, they can click on a checkbox within that step to unlock the next step
 * When a step is in progress, the component will be unlocked, with a checkbox that is unchecked with the ability to mark complete 
-
