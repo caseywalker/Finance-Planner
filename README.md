@@ -1,7 +1,16 @@
-# React Template
+# Capstone Planning
 
-**Use this template to get up and running quickly on projects.**
+## ERD and Wireframes
 
-This is just like the webpack template. Use it, create the repo, connect it to your local and `npm i`.
+[ERD](https://dbdiagram.io/d/60b25254b29a09603d1718fb)
 
-- [Steps to deploy](https://github.com/nss-nightclass-projects/REACT-Deployment-Netlify)
+[Figma](https://www.figma.com/file/uhrouKRO2WY8E0MheAPESq/Finance-Planner?node-id=0%3A1)
+
+## Features
+
+- [ ] Net Income 
+- [ ] Monthly Expenses
+- [ ] Surplus/Deficit Tracker
+- [ ] Simulator for changing income/expenses
+- [ ] Savings Tracker
+- [ ] Steps to Financial Success
