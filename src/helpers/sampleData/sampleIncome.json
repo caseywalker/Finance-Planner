@@ -1,0 +1,26 @@
+{
+  "-MbcwJS-NCTnqHDTE54G" : {
+    "amount" : 2000,
+    "firebaseKey" : "-MbcwJS-NCTnqHDTE54G",
+    "incomeType" : "salary",
+    "payDate" : "1st",
+    "title" : "Salary 1",
+    "uid" : "esFMmf75OndBY9YWMXjIyYTvQPz2"
+  },
+  "-MbcwTm6tJj9Kuh9WcP_" : {
+    "amount" : 2000,
+    "firebaseKey" : "-MbcwTm6tJj9Kuh9WcP_",
+    "incomeType" : "salary",
+    "payDate" : "15th",
+    "title" : "Salary 2",
+    "uid" : "esFMmf75OndBY9YWMXjIyYTvQPz2"
+  },
+  "-Mbcwq57vf9hwVhGFZ7z" : {
+    "amount" : 4000,
+    "firebaseKey" : "-Mbcwq57vf9hwVhGFZ7z",
+    "incomeType" : "commission",
+    "payDate" : "30th",
+    "title" : "Commission",
+    "uid" : "esFMmf75OndBY9YWMXjIyYTvQPz2"
+  }
+}

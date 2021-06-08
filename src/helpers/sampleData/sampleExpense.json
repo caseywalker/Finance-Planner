@@ -1,0 +1,34 @@
+{
+  "-MbcyKOAChVAa9cdqSTM" : {
+    "amount" : "1350",
+    "dueDate" : "30th",
+    "expenseType" : "mortgage/rent",
+    "firebaseKey" : "-MbcyKOAChVAa9cdqSTM",
+    "title" : "Mortgage",
+    "uid" : "esFMmf75OndBY9YWMXjIyYTvQPz2"
+  },
+  "-MbcyPtQ_-C2DUIB4RQp" : {
+    "amount" : "100",
+    "dueDate" : "30th",
+    "expenseType" : "utilities",
+    "firebaseKey" : "-MbcyPtQ_-C2DUIB4RQp",
+    "title" : "Utilities",
+    "uid" : "esFMmf75OndBY9YWMXjIyYTvQPz2"
+  },
+  "-MbcyW9yerCuYQajA7gL" : {
+    "amount" : "200",
+    "dueDate" : "30th",
+    "expenseType" : "insurance",
+    "firebaseKey" : "-MbcyW9yerCuYQajA7gL",
+    "title" : "Insurance",
+    "uid" : "esFMmf75OndBY9YWMXjIyYTvQPz2"
+  },
+  "-Mbcy_wy4g2G15GB2yxW" : {
+    "amount" : "165",
+    "dueDate" : "30th",
+    "expenseType" : "phone",
+    "firebaseKey" : "-Mbcy_wy4g2G15GB2yxW",
+    "title" : "Phone Bill",
+    "uid" : "esFMmf75OndBY9YWMXjIyYTvQPz2"
+  }
+}

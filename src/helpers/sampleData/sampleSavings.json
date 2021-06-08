@@ -1,0 +1,29 @@
+{
+  "-MbczSUKGnd2GZQRfC2o" : {
+    "completed" : "true",
+    "firebaseKey" : "-MbczSUKGnd2GZQRfC2o",
+    "savedAmount" : 1000,
+    "savingType" : "emergency",
+    "targetAmount" : 1000,
+    "title" : "Emergency Expense",
+    "uid" : "esFMmf75OndBY9YWMXjIyYTvQPz2"
+  },
+  "-MbczbuKI1hbT04qF_Te" : {
+    "completed" : "false",
+    "firebaseKey" : "-MbczbuKI1hbT04qF_Te",
+    "savedAmount" : 5000,
+    "savingType" : "living",
+    "targetAmount" : 20000,
+    "title" : "Living Expense",
+    "uid" : "esFMmf75OndBY9YWMXjIyYTvQPz2"
+  },
+  "-MbczmOKetPAHZyzh6dm" : {
+    "completed" : "false",
+    "firebaseKey" : "-MbczmOKetPAHZyzh6dm",
+    "savedAmount" : 0,
+    "savingType" : "downPayment",
+    "targetAmount" : 50000,
+    "title" : "Down Payment",
+    "uid" : "esFMmf75OndBY9YWMXjIyYTvQPz2"
+  }
+}
