@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import {
   Collapse,
@@ -11,7 +12,7 @@ import {
 } from 'reactstrap';
 import { signInUser, signOutUser } from '../helpers/auth';
 
-const NavBar = () => {
+const NavBar = ({ user }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -26,17 +27,25 @@ const NavBar = () => {
         <NavItem>
           <Link className="nav-link" to="/">Home</Link>
         </NavItem>
-        <NavItem>
-          <Button color='info' onClick={signInUser}> Sign In </Button>
-        </NavItem>
-        <NavItem>
-          <Button color='danger' onClick={signOutUser}> Sign Out </Button>
-        </NavItem>
+        {
+            user !== null
+            && <NavItem>
+              {
+                user
+                  ? <Button color='danger' onClick={signOutUser}> Sign Out </Button>
+                  : <Button color='info' onClick={signInUser}> Sign In </Button>
+              }
+            </NavItem>
+          }
         </Nav>
         </Collapse>
       </Navbar>
     </div>
   );
+};
+
+NavBar.propTypes = {
+  user: PropTypes.any
 };
 
 export default NavBar;
