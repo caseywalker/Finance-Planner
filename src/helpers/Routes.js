@@ -18,7 +18,7 @@ PrivateRoute.propTypes = {
   component: PropTypes.func,
   user: PropTypes.any
 };
-function Routes({ user }) {
+function Routes({ user, incomes, setIncomes }) {
   return (
     <div>
       <Switch>
@@ -26,7 +26,11 @@ function Routes({ user }) {
         <PrivateRoute
         user={user}
         path='/income'
-        component={() => <Income user={user} />}
+        component={() => <Income
+          user={user}
+          incomes={incomes}
+          setIncomes={setIncomes}
+          />}
         />
         <PrivateRoute
         user={user}
@@ -49,6 +53,8 @@ function Routes({ user }) {
 }
 
 Routes.propTypes = {
+  incomes: PropTypes.array.isRequired,
+  setIncomes: PropTypes.func.isRequired,
   user: PropTypes.any
 };
 
