@@ -4,7 +4,8 @@ import {
   CardTitle, CardSubtitle, Button
 } from 'reactstrap';
 import PropTypes from 'prop-types';
-
+import ExpenseForm from './ExpenseForm';
+import { deleteExpense } from '../helpers/data/expenseData';
 
 function ExpenseCard({
   firebaseKey,
@@ -23,7 +24,7 @@ function ExpenseCard({
         setEditing((prevState) => !prevState);
         break;
       case 'delete':
-        delete;
+        deleteExpense(firebaseKey, user.uid).then(setExpenses);
         break;
       default: console.warn('nothing selected');
     }
@@ -41,7 +42,15 @@ function ExpenseCard({
           <Button className='mt-1' color='info' onClick={() => handleClick('edit')}> {editing ? 'Close' : 'Edit'}
           </Button>
           {
-            editing && <exForm
+            editing && <ExpenseForm
+            firebaseKey={firebaseKey}
+            formTitle={'Edit Expense'}
+            title={title}
+            amount={amount}
+            dueDate={dueDate}
+            expenseType={expenseType}
+            user={user}
+            setExpenses={setExpenses}
             />
           }
           <br />
