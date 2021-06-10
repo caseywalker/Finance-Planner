@@ -46,6 +46,8 @@ function App() {
         user={user}
         incomes={incomes}
         setIncomes={setIncomes}
+        expenses={expenses}
+        setExpenses={setExpenses}
         />
       </Router>
     </div>
