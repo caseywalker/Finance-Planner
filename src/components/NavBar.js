@@ -17,6 +17,23 @@ const NavBar = ({ user }) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
+  const authenticated = () => (
+    <>
+      <NavItem>
+        <Link className="nav-link" to="/income">Income</Link>
+      </NavItem>
+      <NavItem>
+        <Link className="nav-link" to="/expenses">Expenses</Link>
+      </NavItem>
+      <NavItem>
+        <Link className="nav-link" to="/savings">Savings</Link>
+      </NavItem>
+      <NavItem>
+        <Link className="nav-link" to="/steps">Steps</Link>
+      </NavItem>
+    </>
+  );
+
   return (
     <div>
       <Navbar color="light" light expand="md">
@@ -27,6 +44,7 @@ const NavBar = ({ user }) => {
         <NavItem>
           <Link className="nav-link" to="/">Home</Link>
         </NavItem>
+        { user && authenticated() }
         {
             user !== null
             && <NavItem>
