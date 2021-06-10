@@ -34,6 +34,7 @@ function Income({ incomes, setIncomes, user }) {
           payDate={incomeInfo.payDate}
           incomeType={incomeInfo.incomeType}
           user={user}
+          setIncomes={setIncomes}
           />
         ))
       }

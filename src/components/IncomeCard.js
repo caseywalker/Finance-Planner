@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Card, CardText, CardBody,
   CardTitle, CardSubtitle, Button
 } from 'reactstrap';
 import PropTypes from 'prop-types';
+import { deleteIncome } from '../helpers/data/incomeData';
+import IncomeForm from './IncomeForm';
 
 function IncomeCard({
   firebaseKey,
@@ -11,8 +13,23 @@ function IncomeCard({
   amount,
   payDate,
   incomeType,
-  user
+  user,
+  setIncomes
 }) {
+  const [editing, setEditing] = useState(false);
+
+  const handleClick = (type) => {
+    switch (type) {
+      case 'edit':
+        setEditing((prevState) => !prevState);
+        break;
+      case 'delete':
+        deleteIncome(firebaseKey, user.uid).then(setIncomes);
+        break;
+      default: console.warn('nothing selected');
+    }
+  };
+
   return (
     <div>
       <Card>
@@ -21,7 +38,22 @@ function IncomeCard({
           <CardSubtitle tag="h5" className="mb-2 text-muted">{amount}</CardSubtitle>
           <CardText>{payDate} {incomeType}</CardText>
           <CardText>{firebaseKey} {user.uid}</CardText>
-          <Button> Btn </Button>
+          <Button className='mt-1' color='info' onClick={() => handleClick('edit')}> {editing ? 'Close' : 'Edit'}
+          </Button>
+          {
+            editing && <IncomeForm
+            formTitle={'Edit Income'}
+            setIncomes={setIncomes}
+            firebaseKey={firebaseKey}
+            title={title}
+            amount={amount}
+            payDate={payDate}
+            incomeType={incomeType}
+            user={user}
+            />
+          }
+          <br />
+          <Button className='mt-1' color='danger' onClick={() => handleClick('delete')}>Delete</Button>
         </CardBody>
       </Card>
     </div>
@@ -34,7 +66,8 @@ IncomeCard.propTypes = {
   amount: PropTypes.any.isRequired,
   payDate: PropTypes.string.isRequired,
   incomeType: PropTypes.string.isRequired,
-  user: PropTypes.any
+  user: PropTypes.any,
+  setIncomes: PropTypes.func
 };
 
 export default IncomeCard;
