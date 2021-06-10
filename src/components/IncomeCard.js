@@ -31,7 +31,7 @@ function IncomeCard({
 IncomeCard.propTypes = {
   firebaseKey: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  amount: PropTypes.number.isRequired,
+  amount: PropTypes.any.isRequired,
   payDate: PropTypes.string.isRequired,
   incomeType: PropTypes.string.isRequired,
   user: PropTypes.any
