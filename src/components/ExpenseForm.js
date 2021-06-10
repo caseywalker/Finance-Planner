@@ -85,11 +85,11 @@ function ExpenseForm({
 
 ExpenseForm.propTypes = {
   firebaseKey: PropTypes.string,
-  formTitle: PropTypes,
+  formTitle: PropTypes.string.isRequired,
   title: PropTypes.string,
-  amount: PropTypes,
-  dueDate: PropTypes,
-  expenseType: PropTypes,
+  amount: PropTypes.any,
+  dueDate: PropTypes.string,
+  expenseType: PropTypes.string,
   user: PropTypes.any,
   setExpenses: PropTypes.func.isRequired
 };
