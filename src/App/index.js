@@ -48,6 +48,8 @@ function App() {
         setIncomes={setIncomes}
         expenses={expenses}
         setExpenses={setExpenses}
+        savings={savings}
+        setSavings={setSavings}
         />
       </Router>
     </div>
