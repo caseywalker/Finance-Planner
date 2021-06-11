@@ -70,7 +70,7 @@ SavingsCard.propTypes = {
   title: PropTypes.string.isRequired,
   savedAmount: PropTypes.any.isRequired,
   targetAmount: PropTypes.any.isRequired,
-  completed: PropTypes.bool.isRequired,
+  completed: PropTypes.string.isRequired,
   savingType: PropTypes.string.isRequired,
   user: PropTypes.any,
   setSavings: PropTypes.func.isRequired

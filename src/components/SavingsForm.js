@@ -19,7 +19,7 @@ function SavingsForm({
     targetAmount: targetAmount || 0,
     savedAmount: savedAmount || 0,
     savingType: savingType || '',
-    completed: completed || false,
+    completed: completed || '',
     firebaseKey: firebaseKey || null,
     uid: user.uid
   });
@@ -100,7 +100,7 @@ SavingsForm.propTypes = {
   title: PropTypes.string,
   savedAmount: PropTypes.any,
   targetAmount: PropTypes.any,
-  completed: PropTypes.bool,
+  completed: PropTypes.string,
   savingType: PropTypes.string,
   user: PropTypes.any,
   setSavings: PropTypes.func.isRequired
