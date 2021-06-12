@@ -12,12 +12,23 @@ function SavingsCard({
   title,
   savedAmount,
   targetAmount,
-  completed,
   savingType,
   user,
   setSavings
 }) {
   const [editing, setEditing] = useState(false);
+
+  const isCompleted = () => (
+    <>
+    <CardText>Completed: True</CardText>
+    </>
+  );
+
+  const isNotCompleted = () => (
+    <>
+    <CardText>Completed: False</CardText>
+    </>
+  );
 
   const handleClick = (type) => {
     switch (type) {
@@ -30,7 +41,7 @@ function SavingsCard({
       default: console.warn('nothing selected');
     }
   };
-
+  console.warn(typeof targetAmount);
   return (
     <div>
       <Card>
@@ -40,7 +51,9 @@ function SavingsCard({
             Target Amount: {targetAmount}</CardSubtitle>
           <CardText>Amount Saved: {savedAmount}</CardText>
           <CardText>Saving Type: {savingType}</CardText>
-          <CardText>Completed: {completed}</CardText>
+          {
+            (savedAmount >= targetAmount) ? isCompleted() : isNotCompleted()
+          }
           <CardText>{firebaseKey} {user.uid}</CardText>
           <Button className='mt-1' color='info' onClick={() => handleClick('edit')}> {editing ? 'Close' : 'Edit'}
           </Button>
@@ -51,7 +64,6 @@ function SavingsCard({
             title={title}
             savedAmount={savedAmount}
             targetAmount={targetAmount}
-            completed={completed}
             savingType={savingType}
             user={user}
             setSavings={setSavings}
@@ -70,7 +82,6 @@ SavingsCard.propTypes = {
   title: PropTypes.string.isRequired,
   savedAmount: PropTypes.any.isRequired,
   targetAmount: PropTypes.any.isRequired,
-  completed: PropTypes.string.isRequired,
   savingType: PropTypes.string.isRequired,
   user: PropTypes.any,
   setSavings: PropTypes.func.isRequired

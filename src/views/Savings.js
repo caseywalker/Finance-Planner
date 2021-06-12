@@ -35,7 +35,6 @@ function Savings({
           title={savingsInfo.title}
           savedAmount={savingsInfo.savedAmount}
           targetAmount={savingsInfo.targetAmount}
-          completed={savingsInfo.completed}
           savingType={savingsInfo.savingType}
           user={user}
           setSavings={setSavings}
