@@ -9,7 +9,6 @@ function SavingsForm({
   title,
   savedAmount,
   targetAmount,
-  completed,
   savingType,
   user,
   setSavings
@@ -19,7 +18,6 @@ function SavingsForm({
     targetAmount: targetAmount || 0,
     savedAmount: savedAmount || 0,
     savingType: savingType || '',
-    completed: completed || '',
     firebaseKey: firebaseKey || null,
     uid: user.uid
   });
@@ -28,6 +26,13 @@ function SavingsForm({
     setSaving((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value
+    }));
+  };
+
+  const handleNumberInput = (e) => {
+    setSaving((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.valueAsNumber
     }));
   };
 
@@ -58,18 +63,16 @@ function SavingsForm({
         className='ml-2'
         name='targetAmount'
         type='number'
-        placeholder='0'
         value={saving.targetAmount}
-        onChange={handleInputChange} />
+        onChange={handleNumberInput} />
         <br/>
         <label>Saved Amount:</label>
         <input
         className='ml-2'
         name='savedAmount'
         type='number'
-        placeholder='0'
         value={saving.savedAmount}
-        onChange={handleInputChange} />
+        onChange={handleNumberInput} />
         <br/>
         <label>Savings Type:</label>
         <input
@@ -78,14 +81,6 @@ function SavingsForm({
         type='text'
         placeholder='Type'
         value={saving.savingType}
-        onChange={handleInputChange} />
-        <br/>
-        <label>Completed:</label>
-        <input
-        className='ml-2'
-        name='completed'
-        type='checkbox'
-        value={saving.completed}
         onChange={handleInputChange} />
         <br/>
         <Button color='info' type='submit'>Submit</Button>
@@ -100,7 +95,6 @@ SavingsForm.propTypes = {
   title: PropTypes.string,
   savedAmount: PropTypes.any,
   targetAmount: PropTypes.any,
-  completed: PropTypes.string,
   savingType: PropTypes.string,
   user: PropTypes.any,
   setSavings: PropTypes.func.isRequired
