@@ -41,7 +41,6 @@ function SavingsCard({
       default: console.warn('nothing selected');
     }
   };
-  console.warn(typeof targetAmount);
   return (
     <div>
       <Card>

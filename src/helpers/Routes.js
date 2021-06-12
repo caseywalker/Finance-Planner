@@ -25,7 +25,9 @@ function Routes({
   expenses,
   setExpenses,
   savings,
-  setSavings
+  setSavings,
+  steps,
+  setSteps
 }) {
   return (
     <div>
@@ -61,7 +63,11 @@ function Routes({
         <PrivateRoute
         user={user}
         path='/steps'
-        component={() => <Steps user={user} />}
+        component={() => <Steps
+          user={user}
+          steps={steps}
+          setSteps={setSteps}
+          />}
         />
       </Switch>
     </div>
@@ -75,6 +81,8 @@ Routes.propTypes = {
   setExpenses: PropTypes.func.isRequired,
   savings: PropTypes.array.isRequired,
   setSavings: PropTypes.func.isRequired,
+  steps: PropTypes.object.isRequired,
+  setSteps: PropTypes.func.isRequired,
   user: PropTypes.any
 };
 
