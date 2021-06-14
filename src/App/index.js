@@ -7,7 +7,7 @@ import Routes from '../helpers/Routes';
 import { getIncomes } from '../helpers/data/incomeData';
 import { getExpenses } from '../helpers/data/expenseData';
 import { getSavings } from '../helpers/data/savingsData';
-import { getSteps, getStepsRefactored } from '../helpers/data/stepsData';
+import { getSteps } from '../helpers/data/stepsData';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -15,7 +15,6 @@ function App() {
   const [expenses, setExpenses] = useState([]);
   const [savings, setSavings] = useState([]);
   const [steps, setSteps] = useState({});
-  const [refactoredSteps, setRefactoredSteps] = useState({});
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((authed) => {
@@ -28,19 +27,14 @@ function App() {
         getIncomes(authed.uid).then((incomeArray) => setIncomes(incomeArray));
         getExpenses(authed.uid).then((expenseArray) => setExpenses(expenseArray));
         getSavings(authed.uid).then((savingsArray) => setSavings(savingsArray));
-        getSteps(authed.uid).then((stepsObj) => setSteps(stepsObj));
-        getStepsRefactored(authed.uid).then((stepsRef) => setRefactoredSteps(stepsRef));
+        getSteps(authed.uid).then((stepsObj) => setSteps(stepsObj[0]));
       } else if (user || user === null) {
         setUser(false);
       }
     });
   }, []);
 
-  console.warn(incomes);
-  console.warn(expenses);
-  console.warn(savings);
   console.warn(steps);
-  console.warn(refactoredSteps);
   return (
     <div className='App'>
       <Router>
