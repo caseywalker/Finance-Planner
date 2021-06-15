@@ -123,56 +123,77 @@ function Steps({ user, steps, setSteps }) {
         <CardBody>
           <CardTitle tag="h5">Step One: Save $1,000 for Emergency Fund.</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">{ localSteps.step1 === 'true' ? 'Completed' : 'Not Completed' }</CardSubtitle>
-          <Button className='mt-1' color='info' onClick={() => handleClick('complete1')}>Mark Complete</Button>
-          <Button className='mt-1' color='danger' onClick={() => handleIncomplete('incomplete1')}>Mark Incomplete</Button>
+          {
+            localSteps.step1 === 'false'
+              ? <Button className='mt-1' color='info' onClick={() => handleClick('complete1')}>Mark Complete</Button>
+              : <Button className='mt-1' color='danger' onClick={() => handleIncomplete('incomplete1')}>Mark Incomplete</Button>
+          }
         </CardBody>
       </Card>
       <Card>
         <CardBody>
           <CardTitle tag="h5">Step Two: Pay off all Non-Mortgage Debt.</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">{ localSteps.step2 === 'true' ? 'Completed' : 'Not Completed' }</CardSubtitle>
-          <Button className='mt-1' color='info' onClick={() => handleClick('complete2')}>Mark Complete</Button>
-          <Button className='mt-1' color='danger' onClick={() => handleIncomplete('incomplete2')}>Mark Incomplete</Button>
+          {
+            localSteps.step2 === 'false'
+              ? <Button className='mt-1' color='info' onClick={() => handleClick('complete2')}>Mark Complete</Button>
+              : <Button className='mt-1' color='danger' onClick={() => handleIncomplete('incomplete2')}>Mark Incomplete</Button>
+          }
         </CardBody>
       </Card>
       <Card>
         <CardBody>
           <CardTitle tag="h5">Step Three: Save 6 months of living expenses in an Emergency Fund.</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">{ localSteps.step3 === 'true' ? 'Completed' : 'Not Completed' }</CardSubtitle>
-          <Button className='mt-1' color='info' onClick={() => handleClick('complete3')}>Mark Complete</Button>
-          <Button className='mt-1' color='danger' onClick={() => handleIncomplete('incomplete3')}>Mark Incomplete</Button>
+          {
+            localSteps.step3 === 'false'
+              ? <Button className='mt-1' color='info' onClick={() => handleClick('complete3')}>Mark Complete</Button>
+              : <Button className='mt-1' color='danger' onClick={() => handleIncomplete('incomplete3')}>Mark Incomplete</Button>
+          }
         </CardBody>
       </Card>
       <Card>
         <CardBody>
           <CardTitle tag="h5">Step Four: Invest 15% of income into retirement savings.</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">{ localSteps.step4 === 'true' ? 'Completed' : 'Not Completed' }</CardSubtitle>
-          <Button className='mt-1' color='info' onClick={() => handleClick('complete4')}>Mark Complete</Button>
-          <Button className='mt-1' color='danger' onClick={() => handleIncomplete('incomplete4')}>Mark Incomplete</Button>
+          {
+            localSteps.step4 === 'false'
+              ? <Button className='mt-1' color='info' onClick={() => handleClick('complete4')}>Mark Complete</Button>
+              : <Button className='mt-1' color='danger' onClick={() => handleIncomplete('incomplete4')}>Mark Incomplete</Button>
+          }
         </CardBody>
       </Card>
       <Card>
         <CardBody>
           <CardTitle tag="h5">Step Five: Save for your children&apos;s college fund.</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">{ localSteps.step5 === 'true' ? 'Completed' : 'Not Completed' }</CardSubtitle>
-          <Button className='mt-1' color='info' onClick={() => handleClick('complete5')}>Mark Complete</Button>
-          <Button className='mt-1' color='danger' onClick={() => handleIncomplete('incomplete5')}>Mark Incomplete</Button>
+          {
+            localSteps.step5 === 'false'
+              ? <Button className='mt-1' color='info' onClick={() => handleClick('complete5')}>Mark Complete</Button>
+              : <Button className='mt-1' color='danger' onClick={() => handleIncomplete('incomplete5')}>Mark Incomplete</Button>
+          }
         </CardBody>
       </Card>
       <Card>
         <CardBody>
           <CardTitle tag="h5">Step Six: Pay off the house early.</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">{ localSteps.step6 === 'true' ? 'Completed' : 'Not Completed' }</CardSubtitle>
-          <Button className='mt-1' color='info' onClick={() => handleClick('complete6')}>Mark Complete</Button>
-          <Button className='mt-1' color='danger' onClick={() => handleIncomplete('incomplete6')}>Mark Incomplete</Button>
+          {
+            localSteps.step6 === 'false'
+              ? <Button className='mt-1' color='info' onClick={() => handleClick('complete6')}>Mark Complete</Button>
+              : <Button className='mt-1' color='danger' onClick={() => handleIncomplete('incomplete6')}>Mark Incomplete</Button>
+          }
         </CardBody>
       </Card>
       <Card>
         <CardBody>
           <CardTitle tag="h5">Step Seven: Build wealth and give</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">{ localSteps.step7 === 'true' ? 'Completed' : 'Not Completed'}</CardSubtitle>
-          <Button className='mt-1' color='info' onClick={() => handleClick('complete7')}>Mark Complete</Button>
-          <Button className='mt-1' color='danger' onClick={() => handleIncomplete('incomplete7')}>Mark Incomplete</Button>
+          {
+            localSteps.step7 === 'false'
+              ? <Button className='mt-1' color='info' onClick={() => handleClick('complete7')}>Mark Complete</Button>
+              : <Button className='mt-1' color='danger' onClick={() => handleIncomplete('incomplete7')}>Mark Incomplete</Button>
+          }
         </CardBody>
       </Card>
     </div>
