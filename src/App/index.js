@@ -27,16 +27,13 @@ function App() {
         getIncomes(authed.uid).then((incomeArray) => setIncomes(incomeArray));
         getExpenses(authed.uid).then((expenseArray) => setExpenses(expenseArray));
         getSavings(authed.uid).then((savingsArray) => setSavings(savingsArray));
-        getSteps(authed.uid).then((stepsObj) => setSteps(stepsObj));
+        getSteps(authed.uid).then((stepsObj) => setSteps(stepsObj[0]));
       } else if (user || user === null) {
         setUser(false);
       }
     });
   }, []);
 
-  console.warn(incomes);
-  console.warn(expenses);
-  console.warn(savings);
   console.warn(steps);
   return (
     <div className='App'>
@@ -50,6 +47,8 @@ function App() {
         setExpenses={setExpenses}
         savings={savings}
         setSavings={setSavings}
+        steps={steps}
+        setSteps={setSteps}
         />
       </Router>
     </div>

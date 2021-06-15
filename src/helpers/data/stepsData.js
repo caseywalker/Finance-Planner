@@ -4,8 +4,8 @@ import firebaseConfig from '../apiKeys';
 const dbURL = firebaseConfig.databaseURL;
 
 const getSteps = (uid) => new Promise((resolve, reject) => {
-  axios.get(`${dbURL}/steps.json?orderBy="uid"&npm equalTo="${uid}"`)
-    .then((response) => resolve(response.data))
+  axios.get(`${dbURL}/steps.json?orderBy="uid"&equalTo="${uid}"`)
+    .then((response) => resolve(Object.values(response.data)))
     .catch((error) => reject(error));
 });
 
