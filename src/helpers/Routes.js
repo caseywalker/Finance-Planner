@@ -6,6 +6,7 @@ import Income from '../views/Income';
 import Expenses from '../views/Expenses';
 import Savings from '../views/Savings';
 import Steps from '../views/Steps';
+import Tracker from '../views/Tracker';
 
 const PrivateRoute = ({ component: Component, user, ...rest }) => {
   const routeChecker = (attributes) => (user
@@ -68,6 +69,15 @@ function Routes({
           steps={steps}
           setSteps={setSteps}
           />}
+        />
+        <PrivateRoute
+        user={user}
+        path='/tracker'
+        component={() => <Tracker
+          user={user}
+          incomes={incomes}
+          expenses={expenses}
+        />}
         />
       </Switch>
     </div>

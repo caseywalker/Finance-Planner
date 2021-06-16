@@ -15,7 +15,7 @@ function IncomeForm({
 }) {
   const [income, setIncome] = useState({
     title: title || '',
-    amount: amount || '',
+    amount: amount || 0,
     payDate: payDate || '',
     incomeType: incomeType || '',
     firebaseKey: firebaseKey || null,
@@ -29,12 +29,19 @@ function IncomeForm({
     }));
   };
 
+  const handleNumberInput = (e) => {
+    setIncome((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.valueAsNumber
+    }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (income.firebaseKey) {
       updateIncome(income).then((incomeArray) => setIncomes(incomeArray));
     } else {
-      addIncome(income).then((incomeArray) => setIncome(incomeArray));
+      addIncome(income).then((incomeArray) => setIncomes(incomeArray));
     }
   };
 
@@ -58,7 +65,7 @@ function IncomeForm({
         type='number'
         placeholder='0'
         value={income.amount}
-        onChange={handleInputChange} />
+        onChange={handleNumberInput} />
         <br/>
         <label>Pay Date:</label>
         <input
