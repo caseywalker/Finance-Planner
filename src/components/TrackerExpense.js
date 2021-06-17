@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
   Card, CardText, CardBody,
@@ -23,7 +24,9 @@ function TrackerExpense({ expenses }) {
           <CardTitle tag="h5">Total Expenses</CardTitle>
           <CardText>Monthly Expense Amount: ${monthlyExpenses}</CardText>
           <CardText>Annual Expense Amount: ${annualExpenses}</CardText>
-          <Button>Button</Button>
+          <Link to='/expenses'>
+            <Button type='button' color='info'>View Expenses</Button>
+          </Link>
         </CardBody>
       </Card>
     </div>
