@@ -1,21 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import TrackerIncome from '../components/TrackerIncome';
+import TrackerExpense from '../components/TrackerExpense';
+import TrackerSurplus from '../components/TrackerSurplus';
 
 function Tracker({ user, incomes, expenses }) {
   return (
     <div>
       <h2>You are on the tracker page</h2>
       <h5> { user.uid } </h5>
-      {
-        incomes.map((income) => (
-          <p key={income.firebaseKey}>{typeof income.amount}</p>
-        ))
-      }
-      {
-        expenses.map((expense) => (
-          <p key={expense.firebaseKey}>{typeof expense.amount}</p>
-        ))
-      }
+      <TrackerIncome incomes={incomes} />
+      <TrackerExpense expenses={expenses} />
+      <TrackerSurplus incomes={incomes} expenses={expenses} />
     </div>
   );
 }
