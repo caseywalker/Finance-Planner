@@ -29,6 +29,13 @@ function ExpenseForm({
     }));
   };
 
+  const handleNumberInput = (e) => {
+    setExpense((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.valueAsNumber
+    }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (expense.firebaseKey) {
@@ -58,7 +65,7 @@ function ExpenseForm({
         type='number'
         placeholder='0'
         value={expense.amount}
-        onChange={handleInputChange} />
+        onChange={handleNumberInput} />
         <br/>
         <label>Due Date:</label>
         <input
