@@ -7,6 +7,7 @@ import Expenses from '../views/Expenses';
 import Savings from '../views/Savings';
 import Steps from '../views/Steps';
 import Tracker from '../views/Tracker';
+import Simulator from '../views/Simulator';
 
 const PrivateRoute = ({ component: Component, user, ...rest }) => {
   const routeChecker = (attributes) => (user
@@ -74,6 +75,15 @@ function Routes({
         user={user}
         path='/tracker'
         component={() => <Tracker
+          user={user}
+          incomes={incomes}
+          expenses={expenses}
+        />}
+        />
+        <PrivateRoute
+        user={user}
+        path='/simulator'
+        component={() => <Simulator
           user={user}
           incomes={incomes}
           expenses={expenses}

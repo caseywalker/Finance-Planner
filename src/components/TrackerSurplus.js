@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
   Card, CardText, CardBody,
@@ -28,6 +29,9 @@ function TrackerSurplus({ incomes, expenses }) {
           <CardTitle tag="h5">Surplus</CardTitle>
           <CardText>Monthly Surplus: ${surplus}</CardText>
           <CardText>Annual Surplus: ${surplus * 12}</CardText>
+          <Link to='/simulator'>
+            <Button type='button' color='warning'>Simulator</Button>
+          </Link>
         </CardBody>
       </Card>
     </>
@@ -40,6 +44,9 @@ function TrackerSurplus({ incomes, expenses }) {
           <CardTitle tag="h5">Deficit</CardTitle>
           <CardText>Monthly Deficit: ${surplus}</CardText>
           <CardText>Annual Deficit: ${surplus * 12}</CardText>
+          <Link to='/simulator'>
+            <Button type='button' color='warning'>Simulator</Button>
+          </Link>
         </CardBody>
       </Card>
     </>
@@ -51,7 +58,6 @@ function TrackerSurplus({ incomes, expenses }) {
           {
             surplus >= 0 ? isSurplus() : isDeficit()
           }
-          <Button>Button</Button>
     </div>
   );
 }

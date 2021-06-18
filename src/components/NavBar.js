@@ -34,6 +34,9 @@ const NavBar = ({ user }) => {
       <NavItem>
         <Link className="nav-link" to="/tracker">Tracker</Link>
       </NavItem>
+      <NavItem>
+        <Link className="nav-link" to="/simulator">Simulator</Link>
+      </NavItem>
     </>
   );
 
