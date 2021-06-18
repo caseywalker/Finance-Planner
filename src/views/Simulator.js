@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import TrackerSurplus from '../components/TrackerSurplus';
 import SimulatorIncome from '../components/SimulatorIncome';
 import SimulatorExpense from '../components/SimulatorExpense';
+import SimulatorSurplus from '../components/SimulatorSurplus';
 
 function Simulator({ user, incomes, expenses }) {
   const [monthlyIncome, setMonthlyIncome] = useState(0);
@@ -28,15 +28,18 @@ function Simulator({ user, incomes, expenses }) {
       <h5> { user.uid } </h5>
       <SimulatorIncome
       monthlyIncome={monthlyIncome}
-      simulatedIncomeNumber={simulatedIncomeNumber}
       setSimulatedIncomeNumber={setSimulatedIncomeNumber}
       />
       <SimulatorExpense
       monthlyExpenses={monthlyExpenses}
-      simulatedExpenseNumber={simulatedExpenseNumber}
       setSimulatedExpenseNumber={setSimulatedExpenseNumber}
       />
-      <TrackerSurplus incomes={incomes} expenses={expenses} />
+      <SimulatorSurplus
+      monthlyIncome={monthlyIncome}
+      monthlyExpenses={monthlyExpenses}
+      simulatedIncomeNumber={simulatedIncomeNumber}
+      simulatedExpenseNumber={simulatedExpenseNumber}
+      />
     </div>
   );
 }
