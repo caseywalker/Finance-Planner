@@ -4,7 +4,7 @@ import SimulatorIncome from '../components/SimulatorIncome';
 import SimulatorExpense from '../components/SimulatorExpense';
 import SimulatorSurplus from '../components/SimulatorSurplus';
 
-function Simulator({ user, incomes, expenses }) {
+function Simulator({ incomes, expenses }) {
   const [monthlyIncome, setMonthlyIncome] = useState(0);
   const [monthlyExpenses, setMonthlyExpenses] = useState(0);
   const [simulatedIncomeNumber, setSimulatedIncomeNumber] = useState(0);
@@ -24,8 +24,7 @@ function Simulator({ user, incomes, expenses }) {
 
   return (
     <div>
-      <h2>You are on the simulator page</h2>
-      <h5> { user.uid } </h5>
+      <h2>Simulator</h2>
       <SimulatorIncome
       monthlyIncome={monthlyIncome}
       setSimulatedIncomeNumber={setSimulatedIncomeNumber}
@@ -45,7 +44,6 @@ function Simulator({ user, incomes, expenses }) {
 }
 
 Simulator.propTypes = {
-  user: PropTypes.any,
   incomes: PropTypes.array.isRequired,
   expenses: PropTypes.array.isRequired
 };

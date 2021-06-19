@@ -38,7 +38,6 @@ function ExpenseCard({
           <CardSubtitle tag="h5" className="mb-2 text-muted">
             Expense Amount: {amount}</CardSubtitle>
           <CardText>{dueDate} {expenseType}</CardText>
-          <CardText>{firebaseKey} {user.uid}</CardText>
           <Button className='mt-1' color='info' onClick={() => handleClick('edit')}> {editing ? 'Close' : 'Edit'}
           </Button>
           {

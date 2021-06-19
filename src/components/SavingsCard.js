@@ -53,7 +53,6 @@ function SavingsCard({
           {
             (savedAmount >= targetAmount) ? isCompleted() : isNotCompleted()
           }
-          <CardText>{firebaseKey} {user.uid}</CardText>
           <Button className='mt-1' color='info' onClick={() => handleClick('edit')}> {editing ? 'Close' : 'Edit'}
           </Button>
           {

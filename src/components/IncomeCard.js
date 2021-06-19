@@ -37,7 +37,6 @@ function IncomeCard({
           <CardTitle tag="h3">{title}</CardTitle>
           <CardSubtitle tag="h5" className="mb-2 text-muted">{amount}</CardSubtitle>
           <CardText>{payDate} {incomeType}</CardText>
-          <CardText>{firebaseKey} {user.uid}</CardText>
           <Button className='mt-1' color='info' onClick={() => handleClick('edit')}> {editing ? 'Close' : 'Edit'}
           </Button>
           {
