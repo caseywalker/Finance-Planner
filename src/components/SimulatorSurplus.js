@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { PieChart } from 'react-minimal-pie-chart';
 import {
   Card, CardText, CardBody,
   CardTitle
@@ -26,6 +27,12 @@ function SimulatorSurplus({
           <CardText>Simulated Surplus: ${simulatedSurplus}</CardText>
         </CardBody>
       </Card>
+      <PieChart
+      data={[
+        { title: 'Income', value: simulatedIncomeNumber, color: 'green' },
+        { title: 'Expenses', value: simulatedExpenseNumber, color: 'red' }
+      ]}
+      />
     </>
   );
 
@@ -41,6 +48,12 @@ function SimulatorSurplus({
           <CardText>Simulated Deficit: ${simulatedSurplus}</CardText>
         </CardBody>
       </Card>
+      <PieChart
+      data={[
+        { title: 'Income', value: simulatedIncomeNumber, color: 'green' },
+        { title: 'Expenses', value: simulatedExpenseNumber, color: 'red' }
+      ]}
+      />
     </>
   );
 

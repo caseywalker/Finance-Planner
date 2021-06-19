@@ -101,8 +101,8 @@ Routes.propTypes = {
   setExpenses: PropTypes.func.isRequired,
   savings: PropTypes.array.isRequired,
   setSavings: PropTypes.func.isRequired,
-  steps: PropTypes.object.isRequired,
-  setSteps: PropTypes.func.isRequired,
+  steps: PropTypes.object,
+  setSteps: PropTypes.func,
   user: PropTypes.any
 };
 

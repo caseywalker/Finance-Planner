@@ -4,20 +4,30 @@ import {
   Card, CardBody,
   CardTitle, CardSubtitle, Button
 } from 'reactstrap';
+import { updateSteps } from '../helpers/data/stepsData';
 
 function Steps({ user, steps, setSteps }) {
   const [localSteps, setLocalSteps] = useState({
-    firebaseKey: steps.firebaseKey,
-    step1: steps.step1,
-    step2: steps.step2,
-    step3: steps.step3,
-    step4: steps.step4,
-    step5: steps.step5,
-    step6: steps.step6,
-    step7: steps.step7
+    firebaseKey: steps.firebaseKey || null,
+    step1: steps.step1 || 'false',
+    step2: steps.step2 || 'false',
+    step3: steps.step3 || 'false',
+    step4: steps.step4 || 'false',
+    step5: steps.step5 || 'false',
+    step6: steps.step6 || 'false',
+    step7: steps.step7 || 'false',
+    uid: user.uid
   });
-  console.warn(steps);
+  console.warn(steps.firebaseKey);
   console.warn(setSteps);
+
+  // useEffect(() => {
+  //   if (steps.firebaseKey) {
+  //     console.warn('present');
+  //   } else {
+  //     setSteps(localSteps);
+  //   }
+  // }, []);
 
   const handleClick = (type) => {
     switch (type) {
@@ -26,6 +36,7 @@ function Steps({ user, steps, setSteps }) {
           ...prevState,
           step1: 'true'
         }));
+        // updateSteps(localSteps).then((stepObj) => setSteps(stepObj[0]));
         break;
       case 'complete2':
         setLocalSteps((prevState) => ({
@@ -115,10 +126,16 @@ function Steps({ user, steps, setSteps }) {
     }
   };
 
+  const handleSave = (e) => {
+    e.preventDefault();
+    updateSteps(localSteps).then((stepObj) => setSteps(stepObj[0]));
+  };
+
   return (
     <div>
       <h2>You are on the Steps page</h2>
-      <p> {user.uid} </p>
+      <Button className='mt-1' color='success' onClick={handleSave}>
+        Save Changes</Button>
       <Card>
         <CardBody>
           <CardTitle tag="h5">Step One: Save $1,000 for Emergency Fund.</CardTitle>
@@ -202,8 +219,8 @@ function Steps({ user, steps, setSteps }) {
 
 Steps.propTypes = {
   user: PropTypes.any.isRequired,
-  steps: PropTypes.object.isRequired,
-  setSteps: PropTypes.func.isRequired
+  steps: PropTypes.any,
+  setSteps: PropTypes.func
 };
 
 export default Steps;
