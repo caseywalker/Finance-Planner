@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {
   Card, CardBody,
@@ -7,17 +7,26 @@ import {
 
 function Steps({ user, steps, setSteps }) {
   const [localSteps, setLocalSteps] = useState({
-    firebaseKey: steps.firebaseKey,
-    step1: steps.step1,
-    step2: steps.step2,
-    step3: steps.step3,
-    step4: steps.step4,
-    step5: steps.step5,
-    step6: steps.step6,
-    step7: steps.step7
+    firebaseKey: steps.firebaseKey || null,
+    step1: steps.step1 || 'false',
+    step2: steps.step2 || 'false',
+    step3: steps.step3 || 'false',
+    step4: steps.step4 || 'false',
+    step5: steps.step5 || 'false',
+    step6: steps.step6 || 'false',
+    step7: steps.step7 || 'false',
+    uid: user.uid
   });
-  console.warn(steps);
+  console.warn(steps.firebaseKey);
   console.warn(setSteps);
+
+  useEffect(() => {
+    if (steps.firebaseKey) {
+      console.warn('present');
+    } else {
+      setSteps(localSteps);
+    }
+  }, []);
 
   const handleClick = (type) => {
     switch (type) {
@@ -202,8 +211,8 @@ function Steps({ user, steps, setSteps }) {
 
 Steps.propTypes = {
   user: PropTypes.any.isRequired,
-  steps: PropTypes.object.isRequired,
-  setSteps: PropTypes.func.isRequired
+  steps: PropTypes.any,
+  setSteps: PropTypes.func
 };
 
 export default Steps;
