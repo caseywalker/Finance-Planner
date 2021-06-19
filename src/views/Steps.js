@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
   Card, CardBody,
   CardTitle, CardSubtitle, Button
 } from 'reactstrap';
+import { updateSteps } from '../helpers/data/stepsData';
 
 function Steps({ user, steps, setSteps }) {
   const [localSteps, setLocalSteps] = useState({
@@ -20,13 +21,13 @@ function Steps({ user, steps, setSteps }) {
   console.warn(steps.firebaseKey);
   console.warn(setSteps);
 
-  useEffect(() => {
-    if (steps.firebaseKey) {
-      console.warn('present');
-    } else {
-      setSteps(localSteps);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (steps.firebaseKey) {
+  //     console.warn('present');
+  //   } else {
+  //     setSteps(localSteps);
+  //   }
+  // }, []);
 
   const handleClick = (type) => {
     switch (type) {
@@ -35,6 +36,7 @@ function Steps({ user, steps, setSteps }) {
           ...prevState,
           step1: 'true'
         }));
+        // updateSteps(localSteps).then((stepObj) => setSteps(stepObj[0]));
         break;
       case 'complete2':
         setLocalSteps((prevState) => ({
@@ -124,10 +126,16 @@ function Steps({ user, steps, setSteps }) {
     }
   };
 
+  const handleSave = (e) => {
+    e.preventDefault();
+    updateSteps(localSteps).then((stepObj) => setSteps(stepObj[0]));
+  };
+
   return (
     <div>
       <h2>You are on the Steps page</h2>
-      <p> {user.uid} </p>
+      <Button className='mt-1' color='success' onClick={handleSave}>
+        Save Changes</Button>
       <Card>
         <CardBody>
           <CardTitle tag="h5">Step One: Save $1,000 for Emergency Fund.</CardTitle>
