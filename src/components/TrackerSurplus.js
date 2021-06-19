@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { PieChart } from 'react-minimal-pie-chart';
 import PropTypes from 'prop-types';
 import {
   Card, CardText, CardBody,
@@ -7,8 +8,8 @@ import {
 } from 'reactstrap';
 
 function TrackerSurplus({ incomes, expenses }) {
-  const [, setMonthlyExpenses] = useState(0);
-  const [, setMonthlyIncome] = useState(0);
+  const [monthlyExpenses, setMonthlyExpenses] = useState(0);
+  const [monthlyIncome, setMonthlyIncome] = useState(0);
   const [surplus, setSurplus] = useState(0);
 
   useEffect(() => {
@@ -34,6 +35,12 @@ function TrackerSurplus({ incomes, expenses }) {
           </Link>
         </CardBody>
       </Card>
+      <PieChart
+      data={[
+        { title: 'Income', value: monthlyIncome, color: 'green' },
+        { title: 'Expenses', value: monthlyExpenses, color: 'red' }
+      ]}
+      />
     </>
   );
 
@@ -49,6 +56,12 @@ function TrackerSurplus({ incomes, expenses }) {
           </Link>
         </CardBody>
       </Card>
+      <PieChart
+      data={[
+        { title: 'Income', value: monthlyIncome, color: 'green' },
+        { title: 'Expenses', value: monthlyExpenses, color: 'red' }
+      ]}
+      />
     </>
   );
 
