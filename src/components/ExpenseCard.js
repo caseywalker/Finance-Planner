@@ -32,7 +32,7 @@ function ExpenseCard({
 
   return (
     <div>
-      <Card>
+      <Card className='expense-cards'>
         <CardBody>
           <CardTitle tag="h3">{title}</CardTitle>
           <CardText>Expense Amount: {amount}</CardText>

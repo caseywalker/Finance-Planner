@@ -32,7 +32,7 @@ function IncomeCard({
 
   return (
     <div>
-      <Card>
+      <Card className='income-cards'>
         <CardBody>
           <CardTitle tag="h3">{title}</CardTitle>
           <CardText>Income Amount: {amount}</CardText>

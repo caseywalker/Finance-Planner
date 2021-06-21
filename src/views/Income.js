@@ -24,6 +24,7 @@ function Income({ incomes, setIncomes, user }) {
             user={user}
             />
         }
+        <div className='income-container'>
       {
         incomes.map((incomeInfo) => (
           <IncomeCard
@@ -38,6 +39,7 @@ function Income({ incomes, setIncomes, user }) {
           />
         ))
       }
+      </div>
     </div>
   );
 }

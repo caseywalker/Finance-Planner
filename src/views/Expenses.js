@@ -24,6 +24,7 @@ function Expenses({ expenses, setExpenses, user }) {
             user={user}
             />
         }
+        <div className='expense-container'>
       {
         expenses.map((expenseInfo) => (
           <ExpenseCard
@@ -38,6 +39,7 @@ function Expenses({ expenses, setExpenses, user }) {
           />
         ))
       }
+      </div>
     </div>
   );
 }
