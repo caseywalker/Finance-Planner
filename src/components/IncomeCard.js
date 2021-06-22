@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   Card, CardText, CardBody,
-  CardTitle, CardSubtitle, Button
+  CardTitle, Button
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { deleteIncome } from '../helpers/data/incomeData';
@@ -32,12 +32,12 @@ function IncomeCard({
 
   return (
     <div>
-      <Card>
+      <Card className='income-cards'>
         <CardBody>
           <CardTitle tag="h3">{title}</CardTitle>
-          <CardSubtitle tag="h5" className="mb-2 text-muted">{amount}</CardSubtitle>
-          <CardText>{payDate} {incomeType}</CardText>
-          <CardText>{firebaseKey} {user.uid}</CardText>
+          <CardText>Income Amount: ${amount}</CardText>
+          <CardText>Pay Date: {payDate}</CardText>
+          <CardText>Income Type: {incomeType}</CardText>
           <Button className='mt-1' color='info' onClick={() => handleClick('edit')}> {editing ? 'Close' : 'Edit'}
           </Button>
           {

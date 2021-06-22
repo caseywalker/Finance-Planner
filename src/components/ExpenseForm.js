@@ -46,7 +46,7 @@ function ExpenseForm({
   };
 
   return (
-    <div className='expense-div'>
+    <div className='form-group'>
       <form className='mt-3' id='add-expense-form' autoComplete='off' onSubmit={handleSubmit}>
         <h2>{formTitle}</h2>
         <label>Title:</label>
@@ -75,6 +75,7 @@ function ExpenseForm({
         placeholder='Day of month'
         value={expense.dueDate}
         onChange={handleInputChange} />
+        <br/>
         <label>Expense Type:</label>
         <input
         className='ml-2'

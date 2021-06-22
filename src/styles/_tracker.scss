@@ -1,0 +1,22 @@
+.tracker-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+.tracker-pie {
+  width: 300px;
+  height: 300px;
+}
+
+.tracker-cards {
+  width: 500px;
+  height: 100%;
+  margin-bottom: 65px;
+  padding: 20px;
+}
+
+.pie-cards {
+  width: 500px;
+  height: 100%;
+  padding: 20px;
+}

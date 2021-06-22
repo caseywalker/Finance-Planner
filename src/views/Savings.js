@@ -18,7 +18,7 @@ function Savings({
     <div>
       <h2 className='mt-2'>Savings</h2>
       <Button className='my-3' color='success' onClick={() => handleClick()}>
-        { adding ? 'Close Form' : 'Add Income' }
+        { adding ? 'Close Form' : 'Add Saving Goal' }
       </Button>
         {
           adding && <SavingsForm
@@ -27,6 +27,7 @@ function Savings({
           user={user}
         />
         }
+      <div className='savings-container'>
       {
         savings.map((savingsInfo) => (
           <SavingsCard
@@ -41,6 +42,7 @@ function Savings({
           />
         ))
       }
+      </div>
     </div>
   );
 }

@@ -75,7 +75,6 @@ function Routes({
         user={user}
         path='/tracker'
         component={() => <Tracker
-          user={user}
           incomes={incomes}
           expenses={expenses}
         />}
@@ -84,7 +83,6 @@ function Routes({
         user={user}
         path='/simulator'
         component={() => <Simulator
-          user={user}
           incomes={incomes}
           expenses={expenses}
         />}

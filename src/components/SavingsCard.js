@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   Card, CardText, CardBody,
-  CardTitle, CardSubtitle, Button
+  CardTitle, Button
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { deleteSaving } from '../helpers/data/savingsData';
@@ -43,17 +43,15 @@ function SavingsCard({
   };
   return (
     <div>
-      <Card>
+      <Card className='savings-cards'>
         <CardBody>
           <CardTitle tag="h3">{title}</CardTitle>
-          <CardSubtitle tag="h5" className="mb-2 text-muted">
-            Target Amount: {targetAmount}</CardSubtitle>
-          <CardText>Amount Saved: {savedAmount}</CardText>
+          <CardText>Target Amount: ${targetAmount}</CardText>
+          <CardText>Amount Saved: ${savedAmount}</CardText>
           <CardText>Saving Type: {savingType}</CardText>
           {
             (savedAmount >= targetAmount) ? isCompleted() : isNotCompleted()
           }
-          <CardText>{firebaseKey} {user.uid}</CardText>
           <Button className='mt-1' color='info' onClick={() => handleClick('edit')}> {editing ? 'Close' : 'Edit'}
           </Button>
           {

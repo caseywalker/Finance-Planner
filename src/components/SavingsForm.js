@@ -46,7 +46,7 @@ function SavingsForm({
   };
 
   return (
-    <div className='savings-div'>
+    <div className='form-group'>
       <form className='mt-3' id='add-savings-form' autoComplete='off' onSubmit={handleSubmit}>
         <h2>{formTitle}</h2>
         <label>Title:</label>

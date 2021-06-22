@@ -17,7 +17,7 @@ function SimulatorSurplus({
 
   const isSurplus = () => (
     <>
-      <Card>
+      <Card className='pie-cards'>
         <CardBody>
           <CardTitle tag="h5">Simulated Surplus</CardTitle>
           <CardText>Current Monthly
@@ -25,20 +25,20 @@ function SimulatorSurplus({
             surplus >= 0 ? ' Surplus' : ' Deficit'
             } ${surplus}</CardText>
           <CardText>Simulated Surplus: ${simulatedSurplus}</CardText>
+          <PieChart className='tracker-pie'
+            data={[
+              { title: 'Income', value: simulatedIncomeNumber, color: 'green' },
+              { title: 'Expenses', value: simulatedExpenseNumber, color: 'red' }
+            ]}
+          />
         </CardBody>
       </Card>
-      <PieChart
-      data={[
-        { title: 'Income', value: simulatedIncomeNumber, color: 'green' },
-        { title: 'Expenses', value: simulatedExpenseNumber, color: 'red' }
-      ]}
-      />
     </>
   );
 
   const isDeficit = () => (
     <>
-      <Card>
+      <Card className='pie-cards'>
         <CardBody>
           <CardTitle tag="h5">Simulated Deficit</CardTitle>
           <CardText>Current Monthly
@@ -46,20 +46,19 @@ function SimulatorSurplus({
             surplus >= 0 ? ' Surplus' : ' Deficit'
             } ${surplus}</CardText>
           <CardText>Simulated Deficit: ${simulatedSurplus}</CardText>
+          <PieChart className='tracker-pie'
+            data={[
+              { title: 'Income', value: simulatedIncomeNumber, color: 'green' },
+              { title: 'Expenses', value: simulatedExpenseNumber, color: 'red' }
+            ]}
+          />
         </CardBody>
       </Card>
-      <PieChart
-      data={[
-        { title: 'Income', value: simulatedIncomeNumber, color: 'green' },
-        { title: 'Expenses', value: simulatedExpenseNumber, color: 'red' }
-      ]}
-      />
     </>
   );
 
   return (
     <div>
-      <h2>This is the surplus</h2>
           {
             simulatedSurplus >= 0 ? isSurplus() : isDeficit()
           }

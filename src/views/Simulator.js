@@ -4,7 +4,7 @@ import SimulatorIncome from '../components/SimulatorIncome';
 import SimulatorExpense from '../components/SimulatorExpense';
 import SimulatorSurplus from '../components/SimulatorSurplus';
 
-function Simulator({ user, incomes, expenses }) {
+function Simulator({ incomes, expenses }) {
   const [monthlyIncome, setMonthlyIncome] = useState(0);
   const [monthlyExpenses, setMonthlyExpenses] = useState(0);
   const [simulatedIncomeNumber, setSimulatedIncomeNumber] = useState(0);
@@ -24,28 +24,32 @@ function Simulator({ user, incomes, expenses }) {
 
   return (
     <div>
-      <h2>You are on the simulator page</h2>
-      <h5> { user.uid } </h5>
-      <SimulatorIncome
-      monthlyIncome={monthlyIncome}
-      setSimulatedIncomeNumber={setSimulatedIncomeNumber}
-      />
-      <SimulatorExpense
-      monthlyExpenses={monthlyExpenses}
-      setSimulatedExpenseNumber={setSimulatedExpenseNumber}
-      />
-      <SimulatorSurplus
-      monthlyIncome={monthlyIncome}
-      monthlyExpenses={monthlyExpenses}
-      simulatedIncomeNumber={simulatedIncomeNumber}
-      simulatedExpenseNumber={simulatedExpenseNumber}
-      />
+      <h2>Simulator</h2>
+        <div className='tracker-container'>
+        <div className='tracker-income-expense'>
+          <SimulatorIncome
+          monthlyIncome={monthlyIncome}
+          setSimulatedIncomeNumber={setSimulatedIncomeNumber}
+          />
+          <SimulatorExpense
+          monthlyExpenses={monthlyExpenses}
+          setSimulatedExpenseNumber={setSimulatedExpenseNumber}
+          />
+        </div>
+        <div className='tracker-surplus'>
+        <SimulatorSurplus
+        monthlyIncome={monthlyIncome}
+        monthlyExpenses={monthlyExpenses}
+        simulatedIncomeNumber={simulatedIncomeNumber}
+        simulatedExpenseNumber={simulatedExpenseNumber}
+        />
+        </div>
+      </div>
     </div>
   );
 }
 
 Simulator.propTypes = {
-  user: PropTypes.any,
   incomes: PropTypes.array.isRequired,
   expenses: PropTypes.array.isRequired
 };

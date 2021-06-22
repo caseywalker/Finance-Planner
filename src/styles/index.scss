@@ -1,6 +1,12 @@
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
 @import 'variables';
+@import 'income';
+@import 'expenses';
+@import 'savings';
+@import 'steps';
+@import 'tracker';
+@import 'home';
 
 body {
-  background-color: $favColor;
+  background-color: #599BD7 !important;
 }

@@ -1,0 +1,18 @@
+.steps-container {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.save-button {
+  width: 150px;
+  margin: auto;
+}
+
+.step-card {
+  text-transform: capitalize;
+  width: 70%;
+  height: 100%;
+  margin-top: 10px;
+}

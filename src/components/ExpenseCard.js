@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   Card, CardText, CardBody,
-  CardTitle, CardSubtitle, Button
+  CardTitle, Button
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 import ExpenseForm from './ExpenseForm';
@@ -32,13 +32,12 @@ function ExpenseCard({
 
   return (
     <div>
-      <Card>
+      <Card className='expense-cards'>
         <CardBody>
           <CardTitle tag="h3">{title}</CardTitle>
-          <CardSubtitle tag="h5" className="mb-2 text-muted">
-            Expense Amount: {amount}</CardSubtitle>
-          <CardText>{dueDate} {expenseType}</CardText>
-          <CardText>{firebaseKey} {user.uid}</CardText>
+          <CardText>Expense Amount: ${amount}</CardText>
+          <CardText>Due Date: {dueDate}</CardText>
+          <CardText>Expense Type: {expenseType}</CardText>
           <Button className='mt-1' color='info' onClick={() => handleClick('edit')}> {editing ? 'Close' : 'Edit'}
           </Button>
           {

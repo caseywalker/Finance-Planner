@@ -18,7 +18,7 @@ function SimulatorIncome({ monthlyIncome, setSimulatedIncomeNumber }) {
 
   return (
     <div>
-      <Card>
+      <Card className='tracker-cards'>
         <CardBody>
           <CardTitle tag="h5">Total Income</CardTitle>
           <CardText>Monthly Income Amount: ${monthlyIncome}</CardText>

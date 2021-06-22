@@ -25,49 +25,50 @@ function TrackerSurplus({ incomes, expenses }) {
 
   const isSurplus = () => (
     <>
-      <Card>
+      <Card className='pie-cards'>
         <CardBody>
           <CardTitle tag="h5">Surplus</CardTitle>
           <CardText>Monthly Surplus: ${surplus}</CardText>
           <CardText>Annual Surplus: ${surplus * 12}</CardText>
+          <PieChart className='tracker-pie'
+            data={[
+              { title: 'Income', value: monthlyIncome, color: 'green' },
+              { title: 'Expenses', value: monthlyExpenses, color: 'red' }
+            ]}
+          />
+          <br />
           <Link to='/simulator'>
-            <Button type='button' color='warning'>Simulator</Button>
+            <Button type='button' color='warning' className='mt-4'>Simulator</Button>
           </Link>
         </CardBody>
       </Card>
-      <PieChart
-      data={[
-        { title: 'Income', value: monthlyIncome, color: 'green' },
-        { title: 'Expenses', value: monthlyExpenses, color: 'red' }
-      ]}
-      />
     </>
   );
 
   const isDeficit = () => (
     <>
-      <Card>
+      <Card className='pie-cards'>
         <CardBody>
           <CardTitle tag="h5">Deficit</CardTitle>
           <CardText>Monthly Deficit: ${surplus}</CardText>
           <CardText>Annual Deficit: ${surplus * 12}</CardText>
+          <PieChart className='tracker-pie'
+            data={[
+              { title: 'Income', value: monthlyIncome, color: 'green' },
+              { title: 'Expenses', value: monthlyExpenses, color: 'red' }
+            ]}
+          />
+          <br />
           <Link to='/simulator'>
-            <Button type='button' color='warning'>Simulator</Button>
+            <Button type='button' color='warning' className='mt-3'>Simulator</Button>
           </Link>
         </CardBody>
       </Card>
-      <PieChart
-      data={[
-        { title: 'Income', value: monthlyIncome, color: 'green' },
-        { title: 'Expenses', value: monthlyExpenses, color: 'red' }
-      ]}
-      />
     </>
   );
 
   return (
     <div>
-      <h2>This is the surplus</h2>
           {
             surplus >= 0 ? isSurplus() : isDeficit()
           }
