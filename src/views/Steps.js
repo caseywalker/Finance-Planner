@@ -125,7 +125,7 @@ function Steps({ user, steps, setSteps }) {
 
   return (
     <div className='steps-container'>
-      <h2>You are on the Steps page</h2>
+      <h2>Steps for Financial Success</h2>
       <Button className='mt-1 save-button' color='success' onClick={handleSave}>
         Save Changes</Button>
       <Card className='step-card'>
