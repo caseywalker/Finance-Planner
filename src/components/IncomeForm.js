@@ -85,7 +85,7 @@ function IncomeForm({
         value={income.incomeType}
         onChange={handleInputChange} />
         <br/>
-        <Button color='info' type='submit'>Submit</Button>
+        <Button color='success' type='submit'>Submit</Button>
       </form>
     </div>
   );
