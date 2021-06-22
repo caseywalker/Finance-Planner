@@ -35,7 +35,7 @@ function ExpenseCard({
       <Card className='expense-cards'>
         <CardBody>
           <CardTitle tag="h3">{title}</CardTitle>
-          <CardText>Expense Amount: {amount}</CardText>
+          <CardText>Expense Amount: ${amount}</CardText>
           <CardText>Due Date: {dueDate}</CardText>
           <CardText>Expense Type: {expenseType}</CardText>
           <Button className='mt-1' color='info' onClick={() => handleClick('edit')}> {editing ? 'Close' : 'Edit'}

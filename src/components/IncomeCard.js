@@ -35,7 +35,7 @@ function IncomeCard({
       <Card className='income-cards'>
         <CardBody>
           <CardTitle tag="h3">{title}</CardTitle>
-          <CardText>Income Amount: {amount}</CardText>
+          <CardText>Income Amount: ${amount}</CardText>
           <CardText>Pay Date: {payDate}</CardText>
           <CardText>Income Type: {incomeType}</CardText>
           <Button className='mt-1' color='info' onClick={() => handleClick('edit')}> {editing ? 'Close' : 'Edit'}

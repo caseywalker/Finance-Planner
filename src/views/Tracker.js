@@ -8,9 +8,15 @@ function Tracker({ incomes, expenses }) {
   return (
     <div>
       <h2>Tracker</h2>
-      <TrackerIncome incomes={incomes} />
-      <TrackerExpense expenses={expenses} />
-      <TrackerSurplus incomes={incomes} expenses={expenses} />
+      <div className='tracker-container'>
+        <div className='tracker-income-expense'>
+          <TrackerIncome incomes={incomes} />
+          <TrackerExpense expenses={expenses} />
+        </div>
+        <div className='tracker-surplus'>
+          <TrackerSurplus incomes={incomes} expenses={expenses} />
+        </div>
+      </div>
     </div>
   );
 }

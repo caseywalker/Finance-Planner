@@ -19,7 +19,7 @@ function TrackerExpense({ expenses }) {
 
   return (
     <div>
-      <Card>
+      <Card className='tracker-cards'>
         <CardBody>
           <CardTitle tag="h5">Total Expenses</CardTitle>
           <CardText>Monthly Expense Amount: ${monthlyExpenses}</CardText>

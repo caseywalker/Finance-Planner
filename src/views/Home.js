@@ -9,7 +9,7 @@ import { signInUser, signOutUser } from '../helpers/auth';
 function Home({ user }) {
   const authenticated = () => (
     <>
-    <CardText>Get started by adding incomes and expenses</CardText>
+    <CardText>Get started by adding Incomes and Expenses.</CardText>
     <Button color='danger' onClick={signOutUser}> Sign Out </Button>
     </>
   );

@@ -43,11 +43,11 @@ function SavingsCard({
   };
   return (
     <div>
-      <Card>
+      <Card className='savings-cards'>
         <CardBody>
           <CardTitle tag="h3">{title}</CardTitle>
-          <CardText>Target Amount: {targetAmount}</CardText>
-          <CardText>Amount Saved: {savedAmount}</CardText>
+          <CardText>Target Amount: ${targetAmount}</CardText>
+          <CardText>Amount Saved: ${savedAmount}</CardText>
           <CardText>Saving Type: {savingType}</CardText>
           {
             (savedAmount >= targetAmount) ? isCompleted() : isNotCompleted()

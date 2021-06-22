@@ -2,7 +2,11 @@
 @import 'variables';
 @import 'income';
 @import 'expenses';
+@import 'savings';
+@import 'steps';
+@import 'tracker';
+@import 'home';
 
 body {
-  background-color: $favColor;
+  background-color: #599BD7;
 }

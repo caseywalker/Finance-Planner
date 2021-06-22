@@ -46,7 +46,7 @@ function IncomeForm({
   };
 
   return (
-    <div className='income-div'>
+    <div className='form-group'>
       <form className='mt-3' id='add-income-form' autoComplete='off' onSubmit={handleSubmit}>
         <h2>{formTitle}</h2>
         <label>Title:</label>
@@ -75,6 +75,7 @@ function IncomeForm({
         placeholder='Day of month'
         value={income.payDate}
         onChange={handleInputChange} />
+        <br/>
         <label>Income Type:</label>
         <input
         className='ml-2'

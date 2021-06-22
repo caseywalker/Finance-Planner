@@ -25,20 +25,26 @@ function Simulator({ incomes, expenses }) {
   return (
     <div>
       <h2>Simulator</h2>
-      <SimulatorIncome
-      monthlyIncome={monthlyIncome}
-      setSimulatedIncomeNumber={setSimulatedIncomeNumber}
-      />
-      <SimulatorExpense
-      monthlyExpenses={monthlyExpenses}
-      setSimulatedExpenseNumber={setSimulatedExpenseNumber}
-      />
-      <SimulatorSurplus
-      monthlyIncome={monthlyIncome}
-      monthlyExpenses={monthlyExpenses}
-      simulatedIncomeNumber={simulatedIncomeNumber}
-      simulatedExpenseNumber={simulatedExpenseNumber}
-      />
+        <div className='tracker-container'>
+        <div className='tracker-income-expense'>
+          <SimulatorIncome
+          monthlyIncome={monthlyIncome}
+          setSimulatedIncomeNumber={setSimulatedIncomeNumber}
+          />
+          <SimulatorExpense
+          monthlyExpenses={monthlyExpenses}
+          setSimulatedExpenseNumber={setSimulatedExpenseNumber}
+          />
+        </div>
+        <div className='tracker-surplus'>
+        <SimulatorSurplus
+        monthlyIncome={monthlyIncome}
+        monthlyExpenses={monthlyExpenses}
+        simulatedIncomeNumber={simulatedIncomeNumber}
+        simulatedExpenseNumber={simulatedExpenseNumber}
+        />
+        </div>
+      </div>
     </div>
   );
 }
