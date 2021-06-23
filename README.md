@@ -59,5 +59,6 @@
 ### Steps for Financial Success View
 * There will be 7 suggested steps to take for financial success
 * Each step can only be completed one at a time. Step one must be completed to move onto step two, and so on
+* Edit: Decided to get the user flexibility to complete steps in any order that they choose? 
 * Once the user has completed each step, they can click on a checkbox within that step to unlock the next step
 * When a step is in progress, the component will be unlocked, with a checkbox that is unchecked with the ability to mark complete 
